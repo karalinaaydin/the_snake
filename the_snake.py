@@ -73,9 +73,8 @@ class Snake(GameObject):
     def draw(self, surface):
         """Отрисовывет объект класса."""
         for position in self.positions[:-1]:
-            rect = pygame.Rect(
-                (position[0], position[1]), (GRID_SIZE, GRID_SIZE)
-                )
+            rect = pygame.Rect((position[0], position[1]),
+                               (GRID_SIZE, GRID_SIZE))
             pygame.draw.rect(surface, self.body_color, rect)
             pygame.draw.rect(surface, BORDER_COLOR, rect, 1)
 
@@ -83,10 +82,8 @@ class Snake(GameObject):
         pygame.draw.rect(surface, self.body_color, head_rect)
         pygame.draw.rect(surface, BORDER_COLOR, head_rect, 1)
         if self.last:
-            last_rect = pygame.Rect(
-                (self.last[0], self.last[1]),
-                (GRID_SIZE, GRID_SIZE)
-                )
+            last_rect = pygame.Rect((self.last[0], self.last[1]),
+                                    (GRID_SIZE, GRID_SIZE))
             pygame.draw.rect(surface, BOARD_BACKGROUND_COLOR, last_rect)
 
     def get_head_position(self):
